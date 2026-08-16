@@ -1,0 +1,325 @@
+# Instincts generated from https://github.com/Utakata/ralph-orchestrator
+# Generated: 2026-07-18T07:30:28.179Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: ralph-orchestrator-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: docs
+
+## Evidence
+
+- 2 commits analyzed
+- Detected conventional commit pattern
+- Examples: docs(ja): add Japanese localization tooling and translate skills/, docs(ja): localize root docs and examples with viewers
+
+---
+id: ralph-orchestrator-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Commit Length
+
+## Action
+
+Write moderate-length commit messages (~60 characters)
+
+## Evidence
+
+- Average commit message length: 60 chars
+- Based on 2 commits
+
+---
+id: ralph-orchestrator-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: ralph-orchestrator-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: ralph-orchestrator-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: ralph-orchestrator-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ralph-orchestrator-workflow-add-japanese-localization-with-html-viewers
+trigger: "when doing add japanese localization with html viewers"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Workflow Add Japanese Localization With Html Viewers
+
+## Action
+
+Follow the add-japanese-localization-with-html-viewers workflow:
+1. Create or translate .ja.md files for each documentation or example file.
+2. Generate corresponding .ja.html viewer files using build scripts.
+3. Update or refine localization scripts (e.g., coverage checker, viewer builder).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: *.ja.md, *.ja.html, scripts/build_ja_viewers.py
+
+---
+id: ralph-orchestrator-instinct-file-naming
+trigger: "When creating or renaming a Python file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct File Naming
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: ralph-orchestrator-instinct-function-naming
+trigger: "When defining a function in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: ralph-orchestrator-instinct-class-naming
+trigger: "When defining a class in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: ralph-orchestrator-instinct-constant-naming
+trigger: "When defining a constant in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: ralph-orchestrator-instinct-import-style
+trigger: "When importing modules in Python files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: ralph-orchestrator-instinct-export-style
+trigger: "When exporting from Python modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: ralph-orchestrator-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Test Location
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: ralph-orchestrator-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Git Commit Format
+
+## Action
+
+Use the conventional commit format with a prefix (e.g., docs), a scope in parentheses, and a colon
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Examples: docs(ja): add Japanese localization tooling and translate skills/
+
+---
+id: ralph-orchestrator-instinct-add-ja-localization
+trigger: "When localizing documentation or examples to Japanese and providing interactive HTML viewers"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: Utakata/ralph-orchestrator
+---
+
+# Ralph Orchestrator Instinct Add Ja Localization
+
+## Action
+
+Create or translate .ja.md files, generate .ja.html viewer files using build scripts, and update localization scripts as needed
+
+## Evidence
+
+- Workflow: add-japanese-localization-with-html-viewers
+- Files: *.ja.md, *.ja.html, scripts/build_ja_viewers.py, scripts/check_ja_coverage.py, scripts/ja_scope.py
+- Commit examples: docs(ja): add Japanese localization tooling and translate skills/
+
